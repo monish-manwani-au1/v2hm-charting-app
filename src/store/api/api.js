@@ -4,7 +4,7 @@ const HEADERS = {
 };
 
 function createChart(store, action) {
-  let url = "http://localhost:1337/parse/classes/charts";
+  let url = "https://chartowl1.herokuapp.com/parse/classes/charts";
 
   fetch(url, {
     method: "post",
@@ -23,7 +23,7 @@ function createChart(store, action) {
 
 function getAllCharts(store, action) {
   let params = encodeURI(`where={"userId": "${action.userId}"}`);
-  let url = `http://localhost:1337/parse/classes/charts?${params}`;
+  let url = `https://chartowl1.herokuapp.com/parse/classes/charts?${params}`;
 
   fetch(url, {
     method: "get",
@@ -40,7 +40,7 @@ function getAllCharts(store, action) {
 }
 
 function getOneChart(store, action) {
-  let url = `http://localhost:1337/parse/classes/charts/${action.chartId}`;
+  let url = `https://chartowl1.herokuapp.com/parse/classes/charts/${action.chartId}`;
   fetch(url, {
     method: "get",
     headers: HEADERS
@@ -56,7 +56,7 @@ function getOneChart(store, action) {
 }
 
 function editOneChart(store, action) {
-  let url = `http://localhost:1337/parse/classes/charts/${
+  let url = `https://chartowl1.herokuapp.com/parse/classes/charts/${
     action.chartData.objectId
   }`;
 
@@ -76,7 +76,7 @@ function editOneChart(store, action) {
 }
 
 function removeChart(store, action) {
-  let url = `http://localhost:1337/parse/classes/charts/${action.chartId}`;
+  let url = `https://chartowl1.herokuapp.com/parse/classes/charts/${action.chartId}`;
 
   fetch(url, {
     method: "delete",
